@@ -1,0 +1,74 @@
+$blue: #228be6;
+$gray: #495057;
+$pink: #f06595;
+@mixin button-color($bgColor) {
+    background: $bgColor;
+    &:hover {
+        background: lighten($bgColor,10%); //lighten(컬러, 밝기) - lighten은 메서드개념
+    }
+}
+@mixin font-color($color) {
+    color: $color;
+}
+.Button {
+    display: inline-flex;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    margin: 20px;
+    border-radius: 4px;
+    padding: 0 20px;
+    cursor: pointer;
+    &.bgblue {
+        @include button-color($blue);
+    }
+    &.bggray {
+        @include button-color($gray);
+    }
+    &.bgpink {
+        @include button-color($pink);
+    }
+    &.bgblack {
+        background-color: black;
+    }
+    &.bgwhite {
+        background-color: #fff;
+    }
+    &.blue {
+        @include font-color($blue);
+    }
+    &.gray {
+        @include font-color($gray);
+    }
+    &.pink {
+        @include font-color($pink);
+    }
+    &.white {
+        color: #fff;
+    }
+    &.blueBd {
+        border: 2px solid $blue;
+    }
+    &.grayBd {
+        border: 2px solid $gray;
+    }
+    &.pinkBd {
+        border: 2px solid $pink;
+    }
+    &.medium {
+        height: 2.25rem;
+        font-size: 1rem;
+        line-height: 2.25rem;
+    }
+    &.small {
+        height: 1.75rem;
+        font-size: 0.875rem;
+        line-height: 1.75rem;
+    }
+    &.large {
+        height: 3rem;
+        font-size: 1.25rem;
+        line-height: 3rem;
+    }
+}
